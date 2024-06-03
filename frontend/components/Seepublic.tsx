@@ -22,7 +22,7 @@ interface Movie {
 const Seepublic: React.FC = () => {
   const [publicPlaylists, setPublicPlaylists] = useState<Playlist[]>([]);
   const [loading, setLoading] = useState(true);
-  const apiUrl = 'http://localhost:8000/api/movies/search/playlists';
+  const apiUrl = 'https://movielibrary-hut1.onrender.com/api/movies/search/playlists';
 
   useEffect(() => {
     const fetchPublicPlaylists = async () => {
