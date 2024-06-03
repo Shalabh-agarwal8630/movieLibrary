@@ -12,12 +12,20 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showMarquee, setShowMarquee] = useState(true); // State to control visibility of marquee
 
   useEffect(() => {
     const userToken = localStorage.getItem("user__token");
     if (userToken) {
       navigate("/home");
     }
+
+    // Hide the marquee after 5 seconds
+    const timer = setTimeout(() => {
+      setShowMarquee(false);
+    },25000);
+
+    return () => clearTimeout(timer); // Clear the timer on component unmount
   }, [navigate]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -45,6 +53,21 @@ const Register = () => {
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-black font-sans">
+      {showMarquee && (
+        <div className="text-white text-center w-full py-2 bg-black" style={{ overflow: "hidden" }}>
+          <div style={{ display: "inline-block", animation: "marquee 20s linear infinite" }}>
+            Backend is deployed on render. Please wait for the request to process :)
+          </div>
+        </div>
+      )}
+      <style>
+        {`
+          @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+          }
+        `}
+      </style>
       {loading && (
         <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black bg-opacity-50">
           <Oval
