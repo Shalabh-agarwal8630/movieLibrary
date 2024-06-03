@@ -36,6 +36,13 @@
   dependencies:
     "@types/webidl-conversions" "*"
 
+"@upstash/redis@^1.31.3":
+  version "1.31.3"
+  resolved "https://registry.npmjs.org/@upstash/redis/-/redis-1.31.3.tgz"
+  integrity sha512-KtVgWBUEx/LGbR8oRwYexwzHh3s5DNqYW0bjkD+gjFZVOnREJITvK+hC4PjSSD+8D4qJ+Xbkfmy8ANADZ9EUFg==
+  dependencies:
+    crypto-js "^4.2.0"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz"
@@ -254,6 +261,11 @@ cors@^2.8.5:
   dependencies:
     object-assign "^4"
     vary "^1"
+
+crypto-js@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npmjs.org/crypto-js/-/crypto-js-4.2.0.tgz"
+  integrity sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==
 
 debug@^4:
   version "4.3.4"
