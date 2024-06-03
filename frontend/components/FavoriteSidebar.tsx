@@ -44,7 +44,7 @@ const FavoriteSidebar: React.FC = () => {
     try {
       const token = localStorage.getItem('user__token');
       if (!token) return;
-  
+
       await axios.delete(
         `${baseUrl}/api/movies/favorites/deleteMovie`,
         {
@@ -54,7 +54,7 @@ const FavoriteSidebar: React.FC = () => {
           },
         }
       );
-  
+
       setPlaylists((prevPlaylists) =>
         prevPlaylists.map((playlist) =>
           playlist.id === playlistId
@@ -62,14 +62,15 @@ const FavoriteSidebar: React.FC = () => {
             : playlist
         )
       );
-  
+
       toast.success('Movie deleted successfully.');
+      window.location.reload(); // Refresh window after deleting movie
     } catch (error) {
       console.error('Error deleting movie:', error);
       toast.error('An error occurred while deleting the movie.');
     }
   };
-  
+
   const handleDeletePlaylist = async (playlistId: string) => {
     try {
       const token = localStorage.getItem('user__token');
@@ -86,6 +87,7 @@ const FavoriteSidebar: React.FC = () => {
       );
 
       toast.success('Playlist deleted successfully.');
+      window.location.reload(); // Refresh window after deleting playlist
     } catch (error) {
       console.error('Error deleting playlist:', error);
       toast.error('An error occurred while deleting the playlist.');
