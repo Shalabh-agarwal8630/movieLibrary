@@ -44,60 +44,60 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center min-h-screen bg-black font-sans">
       {loading && (
         <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black bg-opacity-50">
           <Oval
             height={80}
             width={80}
-            color="#4fa94d"
+            color="#ffffff"
             visible={true}
             ariaLabel="oval-loading"
-            secondaryColor="#4fa94d"
+            secondaryColor="#ffffff"
             strokeWidth={2}
             strokeWidthSecondary={2}
           />
         </div>
       )}
-      <div className="w-full max-w-md">
-        <h2 className="text-3xl font-bold mb-6">Register</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="exampleInputName" className="block mb-2">
+      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
+        <h1 className="text-4xl font-bold mb-8 text-center text-black">Welcome to the Register Page</h1>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="exampleInputName" className="block mb-2 text-black font-bold">
               Name
             </label>
             <input
               type="text"
               placeholder="Enter Name"
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition duration-300"
               id="exampleInputName"
               value={name}
               onChange={(event) => setName(event.target.value)}
               required
             />
           </div>
-          <div className="mb-4">
-            <label htmlFor="exampleInputEmail" className="block mb-2">
+          <div>
+            <label htmlFor="exampleInputEmail" className="block mb-2 text-black font-bold">
               Email
             </label>
             <input
               type="email"
               placeholder="Enter Email"
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition duration-300"
               id="exampleInputEmail"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               required
             />
           </div>
-          <div className="mb-4">
-            <label htmlFor="exampleInputPassword" className="block mb-2">
+          <div>
+            <label htmlFor="exampleInputPassword" className="block mb-2 text-black font-bold">
               Password
             </label>
             <input
               type="password"
               placeholder="Enter Password"
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition duration-300"
               id="exampleInputPassword"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
@@ -106,13 +106,13 @@ const Register = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+            className="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition duration-300"
           >
             Register
           </button>
         </form>
-        <p className="mt-4 text-center">
-          Already have an account? <Link to="/login">Login</Link>
+        <p className="mt-4 text-center text-black">
+          Already have an account? <Link to="/login" className="text-black font-bold hover:text-gray-800 transition duration-300">Login</Link>
         </p>
       </div>
     </div>

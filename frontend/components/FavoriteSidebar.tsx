@@ -7,13 +7,13 @@ import toast from 'react-hot-toast';
 import { Oval } from 'react-loader-spinner';
 
 const FavoriteSidebar: React.FC = () => {
-  const [playlists, setPlaylists] = useState<any[]>([]); // State to store user's playlists
-  const [loading, setLoading] = useState(false); // State to manage loading state
-  const [error, setError] = useState<string | null>(null); // State to manage error state
+  const [playlists, setPlaylists] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchPlaylists = async () => {
-      setLoading(true); // Set loading state to true
+      setLoading(true);
       try {
         const token = localStorage.getItem('user__token');
         if (!token) return;
@@ -26,10 +26,10 @@ const FavoriteSidebar: React.FC = () => {
         setPlaylists(response.data.playlists);
       } catch (error) {
         console.error('Error fetching playlists:', error);
-        setError('An error occurred while fetching playlists.'); // Set error message
-        toast.error('An error occurred while fetching playlists.'); // Display error toast
+        setError('An error occurred while fetching playlists.');
+        toast.error('An error occurred while fetching playlists.');
       } finally {
-        setLoading(false); // Set loading state to false
+        setLoading(false);
       }
     };
 
@@ -38,7 +38,6 @@ const FavoriteSidebar: React.FC = () => {
 
   const handlePlaylistClick = (playlistId: string) => {
     console.log('Playlist clicked:', playlistId);
-    // Add logic to handle playlist click
   };
 
   return (
@@ -48,7 +47,7 @@ const FavoriteSidebar: React.FC = () => {
         <div className="indicator">
           <label
             htmlFor="my-drawer-4"
-            className="capitalize drawer-button btn bg-gray-700 text-white"
+            className="capitalize drawer-button btn bg-gray-700 text-white transition duration-300 hover:bg-gray-800"
           >
             See Playlists 💗
           </label>
@@ -63,8 +62,8 @@ const FavoriteSidebar: React.FC = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-          <span className="text-teal-700 text-3xl font-semibold">
+        <ul className="menu p-4 w-80 min-h-full bg-gray-900 text-white">
+          <span className="text-teal-700 text-3xl font-semibold mb-4">
             <span className="text-teal-500">{playlists.length} </span>
             Playlists 💗
           </span>
@@ -82,10 +81,10 @@ const FavoriteSidebar: React.FC = () => {
               />
             </div>
           ) : error ? (
-            <span className="text-red-500">{error}</span> // Display error message
+            <span className="text-red-500">{error}</span>
           ) : playlists.length > 0 ? (
             playlists.map((playlist: any, index: number) => (
-              <li key={index}>
+              <li key={index} className="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                 {/* Pass playlist and click handler to FavCard component */}
                 <FavCard playlist={playlist} onPlaylistClick={handlePlaylistClick} />
               </li>

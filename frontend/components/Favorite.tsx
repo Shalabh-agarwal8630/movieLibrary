@@ -21,7 +21,7 @@ const Favorite: React.FC = () => {
   }, [fetchFavorites]);
 
   return (
-    <div className="w-1/4 h-full rounded-md border bg-white/10 border-gray-800/50 p-4">
+    <div className="w-1/4 h-full rounded-md border border-gray-800 bg-white bg-opacity-10 p-4">
       <span className="text-teal-700 font-semibold text-lg">Favorites</span>
       <div className="flex justify-center items-start flex-wrap gap-10 mt-4">
         {favorites === null ? (

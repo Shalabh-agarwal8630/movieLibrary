@@ -48,47 +48,47 @@ const Login = ({ setUserToken }: any) => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center min-h-screen bg-black font-sans text-white">
       {loading && (
         <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black bg-opacity-50">
           <Oval
             height={80}
             width={80}
-            color="#4fa94d"
+            color="#ffffff"
             visible={true}
             ariaLabel="oval-loading"
-            secondaryColor="#4fa94d"
+            secondaryColor="#ffffff"
             strokeWidth={2}
             strokeWidthSecondary={2}
           />
         </div>
       )}
-      <div className="w-full max-w-md">
-        <h2 className="text-3xl font-bold mb-6">Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="email" className="block mb-2">
+      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
+        <h1 className="text-4xl font-bold mb-8 text-center text-black">Welcome to the Login Page</h1>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="email" className="block mb-2 text-black font-bold">
               Email
             </label>
             <input
               type="email"
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
-              id="email"
               placeholder="Enter Email"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition duration-300"
+              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
-          <div className="mb-4">
-            <label htmlFor="password" className="block mb-2">
+          <div>
+            <label htmlFor="password" className="block mb-2 text-black font-bold">
               Password
             </label>
             <input
               type="password"
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
-              id="password"
               placeholder="Enter Password"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition duration-300"
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -96,16 +96,16 @@ const Login = ({ setUserToken }: any) => {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+            className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
           >
             Login
           </button>
         </form>
-        <p className="mt-4 text-center">
-          Don't have an account? <Link to="/register" className="text-blue-500">Register</Link>
+        <p className="mt-4 text-center text-black">
+          Don't have an account? <Link to="/register" className="text-black font-bold hover:text-gray-800 transition duration-300">Register</Link>
         </p>
-        <p className="mt-4 text-center">
-          Continue without login? <Link to="/home" className="text-blue-500">Let's Go!</Link>
+        <p className="mt-4 text-center text-black">
+          Continue without login? <Link to="/home" className="text-black font-bold hover:text-gray-800 transition duration-300">Let's Go!</Link>
         </p>
       </div>
     </div>

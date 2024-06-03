@@ -20,7 +20,7 @@ export default function Footer() {
         <h5>
           Made by{" "}
           <a href="" style={{ textDecoration: "none", color: "red" }}>
-            Yash Bhargava
+            Shalabh Agarwal
           </a>
         </h5>
       </div>

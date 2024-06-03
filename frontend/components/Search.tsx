@@ -57,7 +57,7 @@ export const Search = () => {
 					id='default-search'
 					value={searchTerm}
 					onChange={(e) => setSearchTerm(e.target.value)}
-					className='block w-full p-4 pl-10 text-sm outline-none focus:outline-none  border  rounded-lg bg-gray-700 border-gray-600 placeholder-gray-300 text-white font-bold'
+					className='block w-full p-4 pl-10 text-sm outline-none focus:outline-none border rounded-lg bg-gray-700 border-gray-600 placeholder-gray-300 text-white font-bold transition-all duration-300 ease-in-out focus:bg-gray-800 focus:border-gray-700'
 					placeholder='Start typing to search...'
 					required
 				/>
