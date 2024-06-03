@@ -35,6 +35,7 @@ This project is a Movie Library Web Application that allows users to sign in, se
   - **Express.js**
   - **MongoDB**
   - **JWT** for authentication
+  - **Redis** for caching (using Upstash)
 
 - **Hosting:**
   - **Frontend**: Hosted on Netlify
@@ -66,6 +67,7 @@ This project is a Movie Library Web Application that allows users to sign in, se
    MONGODB_URI=<your-mongodb-uri>
    JWT_SECRET=<your-jwt-secret>
    OMDB_API_KEY=<your-omdb-api-key>
+   REDIS_URL=<your-upstash-redis-url>
    ```
 
 4. Start the backend server:
@@ -84,6 +86,7 @@ This project is a Movie Library Web Application that allows users to sign in, se
    ```sh
    npm install
    ```
+
 3. Start the frontend development server:
    ```sh
    npm run dev
@@ -124,3 +127,12 @@ Feel free to fork the repository and submit pull requests. For major changes, pl
 ## License
 
 This project is licensed under the MIT License.
+
+---
+
+## Additional Information
+
+### Redis Caching
+
+- We have implemented caching on the login process using Redis.
+- The Redis service is provided by Upstash for efficient session management and quick retrieval of user authentication data.
