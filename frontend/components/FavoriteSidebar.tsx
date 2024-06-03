@@ -64,7 +64,7 @@ const FavoriteSidebar: React.FC = () => {
       );
 
       toast.success('Movie deleted successfully.');
-      window.location.reload(); // Refresh window after deleting movie
+      // window.location.reload(); // Refresh window after deleting movie
     } catch (error) {
       console.error('Error deleting movie:', error);
       toast.error('An error occurred while deleting the movie.');
@@ -87,7 +87,7 @@ const FavoriteSidebar: React.FC = () => {
       );
 
       toast.success('Playlist deleted successfully.');
-      window.location.reload(); // Refresh window after deleting playlist
+      // window.location.reload(); // Refresh window after deleting playlist
     } catch (error) {
       console.error('Error deleting playlist:', error);
       toast.error('An error occurred while deleting the playlist.');

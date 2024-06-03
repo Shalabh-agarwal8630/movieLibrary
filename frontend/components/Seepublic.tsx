@@ -66,7 +66,7 @@ const Seepublic: React.FC = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {publicPlaylists.length > 0 ? (
-            publicPlaylists.map((playlist) => (
+            publicPlaylists.map((playlist)  => playlist.movies.length>0 ? (
               <div
                 key={playlist.id}
                 className="border border-gray-700 rounded-lg p-4 bg-gray-800 text-white shadow-lg transition duration-300 transform hover:scale-105"
@@ -99,7 +99,7 @@ const Seepublic: React.FC = () => {
                   </div>
                 )}
               </div>
-            ))
+            ) : null)
           ) : (
             <div className="flex justify-center items-center text-center text-white h-96">
               <p className="text-4xl font-bold italic">No public playlists available.</p>
